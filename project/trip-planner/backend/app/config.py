@@ -25,11 +25,11 @@ class Settings(BaseSettings):
     cors_origins: str = "http://localhost:5173,http://localhost:3000,http://127.0.0.1:5173,http://127.0.0.1:3000"
 
     # 高德地图API配置
-    amap_api_key: str = ""
+    amap_api_key: str = "8f31552cc4aa36497e655a0b49203b2e"
 
     # Unsplash API配置
-    unsplash_access_key: str = ""
-    unsplash_secret_key: str = ""
+    unsplash_access_key: str = "fo1b719nRZfLmA_zNTa7NSISnS2xGAhKIXV8icVUIu4"
+    unsplash_secret_key: str = "4bQHxEhWM4bD-K5DTORSyX73Yv_-OT7p41MaE6qqsGI"
 
     # LLM配置 (从环境变量读取,由HelloAgents管理)
     openai_api_key: str = ""

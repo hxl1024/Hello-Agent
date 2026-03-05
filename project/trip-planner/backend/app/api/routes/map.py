@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException, Query
 from typing import Optional
-from ..models.schemas import POISearchRequest, POISearchResponse, RouteRequest, RouteResponse, WeatherResponse
-from ..services.amap_service import get_amap_service
+from ...models.schemas import POISearchRequest, POISearchResponse, RouteRequest, RouteResponse, WeatherResponse, RouteInfo
+from ...services.amap_service import get_amap_service
+
 
 router = APIRouter(prefix="/map", tags=["地图服务"])
 
@@ -89,7 +90,7 @@ async def plan_route(request: RouteRequest):
         return RouteResponse(
             success=True,
             message="路线规划成功",
-            data = route_info
+            data = RouteInfo(**route_info)
         )
         
     except Exception as e:
